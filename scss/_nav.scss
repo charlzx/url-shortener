@@ -6,6 +6,8 @@ header {
    align-items: center;
    position: relative;
    margin-bottom: 20px;
+   margin-left: 5%;
+   margin-right: 5%;
 
    img {
       width: fit-content;
@@ -34,7 +36,7 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: 700;
+      font-weight: 600;
 
       ul {
          display: flex;
@@ -42,6 +44,15 @@ header {
          li {
             color: $grayViolet;
             margin-left: 20px;
+            cursor: pointer;
+
+            &:hover {
+               color: darken($grayViolet, 10%);
+            }
+            
+            &:active {
+               transform: scale(.95);
+            }
          }
       }
 
@@ -60,11 +71,20 @@ header {
             background-color: transparent;
             color: $grayViolet;
             cursor: pointer;
+            font-size: 95%;
+
+            &:hover {
+               color: darken($grayViolet, 10%);
+            }
+            
+            &:active {
+               transform: scale(.95);
+            }
          }
          
          button:last-child {
             border-radius: 50px;
-            padding: 7.5px 20px;
+            padding: 10px 25px;
             background-color: $cyan;
             margin-left: 30px;
             color: $white;

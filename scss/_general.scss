@@ -1,0 +1,274 @@
+@use 'config' as *;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+ul, li {
+   list-style-type: none;
+}
+
+body {
+   font-size: 18px;
+   font-family: $poppin;
+   color: $veryDarkViolet;
+   background-color: $white;
+   margin: 40px 0 0 0;
+}
+
+#one {
+   display: flex;
+   align-items: center;
+   gap: 30px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 150px;
+
+   div {
+      h1 {
+         font-size: 4rem;
+         line-height: 4.5rem;
+         margin-bottom: 10px;
+         color: inherit;
+         font-weight: 700;
+      }
+
+      p {
+         color: $grayViolet;
+      }
+
+      button {
+         font-family: inherit;
+         font-weight: inherit;
+         font-size: inherit;
+         outline: 0;
+         border: 0;
+         background-color: transparent;
+         color: $grayViolet;
+         cursor: pointer;
+         border-radius: 50px;
+         padding: 15px 30px;
+         background-color: $cyan;
+         color: $white;
+         margin-top: 40px;
+
+         &:active {
+            transform: scale(.95);
+         }
+      }
+
+      img {
+         width: 100%
+      }
+   }
+
+   div:last-child {
+      width: 100%;
+   }
+}
+
+#two {
+   background-color: lighten($gray, 17.5%);
+   padding: 120px 5% 20px;
+   position: relative;
+
+   form {
+      position: absolute;
+      top: -80px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 50px 60px;
+      border-radius: 10px;
+
+      background: url('../images/bg-shorten-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: $darkViolet;
+
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      gap: 2.5%;
+
+      input[type='text']{
+         font-size: inherit;
+         font-size: 105%;
+         font-family: inherit;
+         outline: 0;
+         border: 0;
+         padding: 15px;
+         border-radius: 10px;
+      }
+
+      button {
+         cursor: pointer;
+         font-size: inherit;
+         font-size: 100%;
+         font-family: inherit;
+         outline: 0;
+         border: 0;
+         padding: 10px 30px;
+         border-radius: 10px;
+         color: $white;
+         background-color: $cyan;
+         transition: .2s ease-in-out;
+
+         &:active {
+            transform: scale(.9);
+         }
+      }
+   }
+
+   .heading {
+      margin: 40px 0;
+      text-align: center;
+
+      h1 {
+         font-size: 2.35rem;
+         color: inherit;
+      }
+      
+      p {
+         color: $grayViolet;
+         margin: 15px 0 0 0;
+      }
+   }
+
+   .about {
+      display: flex;
+      // gap: 2%;
+      margin: 100px 0;
+
+      & > div {
+         background-color: $white;
+         padding: 80px 20px 40px;
+         border-radius: 5px;
+         position: relative;
+         height: fit-content;
+
+         .imageDiv {
+            width: 80px;
+            background-color: $darkViolet;
+            padding: 16.5px 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: -40px;
+
+            img {
+               width: 100%;
+               padding: 0;
+               margin: 0;
+               transform: translateY(3.5px);
+            }
+         }
+
+         .textDiv {
+            h3 {
+               margin-bottom: 10px;
+            }
+
+            p {
+               color: $grayViolet;
+               font-size: 90%;
+            }
+         }
+      }
+
+      & > span {
+         width: 10%;
+         height: 10px;
+         background-color: $cyan;
+      }
+
+      & > span:nth-child(even) {
+         margin-top: 140px;
+      }
+      & > div:nth-child(3) {
+         margin-top: 40px;
+      }
+
+      & > div:last-child {
+         margin-top: 80px;
+      }
+   }
+}
+
+#three {
+   padding: 60px 5%;
+
+   background: url(../images/bg-boost-desktop.svg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   background-color: $darkViolet;
+   width: 100%;
+   text-align: center;
+
+
+   h1 {
+      font-size: 2.35rem;
+      color: $white;
+      margin-bottom: 20px;
+   }
+
+   button {
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      outline: 0;
+      border: 0;
+      background-color: transparent;
+      color: $grayViolet;
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 13.5px 30px;
+      background-color: $cyan;
+      color: $white;
+
+      &:active {
+         transform: scale(.95);
+      }
+   }
+}
+
+footer {
+   background-color: $veryDarkViolet;
+   color: $white;
+   padding: 5%;
+   display: flex;
+   justify-content: space-between;
+
+   img {
+      filter: brightness(100);
+      height: fit-content;
+   }
+
+   h4 {
+      margin-bottom: 20px;
+   }
+
+   li {
+      color: $gray;
+      margin-bottom: 10px;
+      font-size: 95%;
+      cursor: pointer;
+
+      &:hover {
+         color: $grayViolet;
+      }
+      
+      &:active {
+         transform: scale(.95);
+      }
+   }
+
+   ul:last-child {
+      display: flex;
+      justify-content: space-between;
+      width: 13.5%;
+   }
+   
+
+}
