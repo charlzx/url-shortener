@@ -22,17 +22,19 @@ body {
    display: flex;
    align-items: center;
    gap: 30px;
-   margin-left: 5%;
-   margin-right: 5%;
-   margin-bottom: 150px;
+   margin: 60px 5% 150px;
 
    div {
       h1 {
          font-size: 4rem;
-         line-height: 4.5rem;
+         line-height: 4.15rem;
          margin-bottom: 10px;
          color: inherit;
          font-weight: 700;
+
+         br {
+            display: none;
+         }
       }
 
       p {
@@ -71,6 +73,9 @@ body {
 
 #two {
    background-color: lighten($gray, 17.5%);
+}
+
+#two > div {
    padding: 120px 5% 20px;
    position: relative;
 
@@ -100,6 +105,7 @@ body {
          border: 0;
          padding: 15px;
          border-radius: 10px;
+         color: $grayViolet;
       }
 
       button {
@@ -235,8 +241,11 @@ body {
 
 footer {
    background-color: $veryDarkViolet;
+}
+
+footer > div {
    color: $white;
-   padding: 5%;
+   padding: 50px 5%;
    display: flex;
    justify-content: space-between;
 
@@ -254,6 +263,7 @@ footer {
       margin-bottom: 10px;
       font-size: 95%;
       cursor: pointer;
+      width: fit-content;
 
       &:hover {
          color: $grayViolet;
@@ -267,8 +277,11 @@ footer {
    ul:last-child {
       display: flex;
       justify-content: space-between;
-      width: 13.5%;
-   }
-   
+      // width: 13.5%;
 
+      li {
+         height: fit-content;
+         margin-left: 20px;
+      }
+   }
 }
