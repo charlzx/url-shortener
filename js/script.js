@@ -38,7 +38,7 @@ form.addEventListener('submit', (e) => {
 
       newLink.sendInput(inputLink)
       .then(data => {
-         console.log(data)
+         // console.log(data)
 
          if (data.ok === true){
             shortLinks.innerHTML += `
@@ -93,7 +93,7 @@ form.addEventListener('submit', (e) => {
          error.innerHTML = "Error: You're not connected to the Internet"
          error.style.display = "block"
 
-         
+
          setTimeout(function(){
             error.innerHTML = ""
             error.style.display = "none"
@@ -114,13 +114,14 @@ form.addEventListener('submit', (e) => {
 })
 
 document.body.addEventListener('click', (e) => {
-   console.log(e.target)
-
    if(e.target.classList.contains("copy-link")){
-      console.log(e.target)
+      
+      let copyText = e.target.previousElementSibling.href
+
+      // copy the short link to clipboard
+      navigator.clipboard.writeText(copyText)
 
       e.target.innerHTML = "Copied!"
       e.target.style.backgroundColor = "hsl(257, 27%, 26%)"
-
    }
 })
