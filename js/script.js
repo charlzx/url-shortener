@@ -12,14 +12,10 @@ input.style.border = '3px solid transparent'
 
 class Link {
    async sendInput (url){
+      loader.style.display = "block";
+
       let request = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
 
-      request.onload = () => {
-         let spinner = document.createElement('img')
-         spinner.src = "../images/loading.svg"
-
-         loader.appendChild(spinner)
-      }
 
       let response = await request.json()
 
@@ -39,6 +35,8 @@ form.addEventListener('submit', (e) => {
       newLink.sendInput(inputLink)
       .then(data => {
          // console.log(data)
+         loader.style.display = "none";
+
 
          if (data.ok === true){
             shortLinks.innerHTML += `
@@ -87,7 +85,9 @@ form.addEventListener('submit', (e) => {
          }
 
       })
-      .catch(err => {
+         .catch(err => {
+         loader.style.display = "none";
+
          console.log(err)
 
          error.innerHTML = "Error: You're not connected to the Internet"
