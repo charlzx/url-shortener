@@ -1,0 +1,378 @@
+@use 'config' as *;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+ul, li {
+   list-style-type: none;
+}
+
+body {
+   font-size: 18px;
+   font-family: $poppin;
+   color: $veryDarkViolet;
+   background-color: $white;
+   margin: 40px 0 0 0;
+}
+
+#one {
+   display: flex;
+   align-items: center;
+   gap: 30px;
+   grid-gap: 30px;
+   margin: 60px 5% 150px;
+
+   div {
+      h1 {
+         font-size: 4rem;
+         line-height: 4.15rem;
+         margin-bottom: 10px;
+         color: inherit;
+         font-weight: 700;
+
+         br {
+            display: none;
+         }
+      }
+
+      p {
+         color: $grayViolet;
+      }
+
+      button {
+         font-family: inherit;
+         font-weight: inherit;
+         font-size: inherit;
+         outline: 0;
+         border: 0;
+         background-color: transparent;
+         color: $grayViolet;
+         cursor: pointer;
+         border-radius: 50px;
+         padding: 15px 30px;
+         background-color: $cyan;
+         color: $white;
+         margin-top: 40px;
+
+         &:active {
+            transform: scale(.95);
+         }
+      }
+
+      img {
+         width: 100%
+      }
+   }
+
+   div:last-child {
+      width: 100%;
+   }
+}
+
+#two {
+   background-color: lighten($gray, 17.5%);
+}
+
+#two > div {
+   padding: 120px 5% 20px;
+   position: relative;
+
+   form {
+      position: absolute;
+      top: -80px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 30px 60px 50px;
+      border-radius: 10px;
+
+      background: url('../images/bg-shorten-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: $darkViolet;
+
+      div {
+         display: grid;
+         grid-template-columns: 1fr max-content;
+         gap: 2.5%;
+         grid-gap: 2.5%;
+      }
+
+      #label {
+         padding-left: 18px;
+         color: red;
+         font-weight: 600;
+         margin-bottom: 15px;
+         height: 1rem;
+         font-size: 1rem;
+      }
+
+      input[type='text']{
+         font-size: inherit;
+         font-size: 105%;
+         font-family: inherit;
+         outline: 0;
+         border: 0;
+         padding: 15px;
+         border-radius: 10px;
+         color: $grayViolet;
+      }
+
+      button {
+         cursor: pointer;
+         font-size: inherit;
+         font-size: 100%;
+         font-family: inherit;
+         outline: 0;
+         border: 0;
+         padding: 10px 30px;
+         border-radius: 10px;
+         color: $white;
+         background-color: $cyan;
+         transition: .2s ease-in-out;
+
+         &:active {
+            transform: scale(.9);
+         }
+      }
+   }
+
+   .heading {
+      margin: 40px 0;
+      text-align: center;
+
+      h1 {
+         font-size: 2rem;
+         line-height: 2.1rem;
+         color: inherit;
+      }
+      
+      p {
+         color: $grayViolet;
+         margin: 15px 0 0 0;
+      }
+   }
+
+   .about {
+      display: flex;
+      // gap: 2%;
+      margin: 100px 0;
+
+      & > div {
+         background-color: $white;
+         padding: 80px 20px 40px;
+         border-radius: 5px;
+         position: relative;
+         height: fit-content;
+
+         .imageDiv {
+            width: 80px;
+            background-color: $darkViolet;
+            padding: 16.5px 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: -40px;
+
+            img {
+               width: 100%;
+               padding: 0;
+               margin: 0;
+               transform: translateY(3.5px);
+            }
+         }
+
+         .textDiv {
+            h3 {
+               margin-bottom: 10px;
+            }
+
+            p {
+               color: $grayViolet;
+               font-size: 90%;
+            }
+         }
+      }
+
+      & > span {
+         width: 10%;
+         height: 10px;
+         background-color: $cyan;
+      }
+
+      & > span:nth-child(even) {
+         margin-top: 140px;
+      }
+      & > div:nth-child(3) {
+         margin-top: 40px;
+      }
+
+      & > div:last-child {
+         margin-top: 80px;
+      }
+   }
+}
+
+#three {
+   padding: 60px 5%;
+
+   background: url(../images/bg-boost-desktop.svg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   background-color: $darkViolet;
+   width: 100%;
+   text-align: center;
+
+
+   h1 {
+      font-size: 2rem;
+      line-height: 2.10rem;
+      color: $white;
+      margin-bottom: 20px;
+   }
+
+   button {
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      outline: 0;
+      border: 0;
+      background-color: transparent;
+      color: $grayViolet;
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 13.5px 30px;
+      background-color: $cyan;
+      color: $white;
+
+      &:active {
+         transform: scale(.95);
+      }
+   }
+}
+
+footer {
+   background-color: $veryDarkViolet;
+}
+
+footer > div {
+   color: $white;
+   padding: 50px 5%;
+   display: flex;
+   justify-content: space-between;
+
+   img {
+      filter: brightness(100);
+      height: fit-content;
+   }
+
+   h4 {
+      margin-bottom: 20px;
+   }
+
+   li {
+      color: $gray;
+      margin-bottom: 10px;
+      font-size: 95%;
+      cursor: pointer;
+      width: fit-content;
+
+      &:hover {
+         color: $grayViolet;
+      }
+      
+      &:active {
+         transform: scale(.95);
+      }
+   }
+
+   ul:last-child {
+      display: flex;
+      justify-content: space-between;
+      // width: 13.5%;
+
+      li {
+         height: fit-content;
+         margin-left: 20px;
+      }
+   }
+}
+
+#error {
+   color: red;
+   font-weight: bold;
+   position: fixed;
+   z-index: 10;
+   top: 0vh;
+   margin-top: 30px;
+   background-color: lighten($gray, 50%);
+   width: 90%;
+   padding: 10px;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   display: none;
+   box-shadow: 0 8px 42px 5px lighten($gray, 20%);
+   a {
+      color: $darkViolet;
+   }
+}
+
+.shortLinks {
+   display: flex;
+   width: 100%;
+   background-color: $white;
+   border-radius: 5px;
+   padding: 15px;
+   margin-bottom: 10px;
+   align-items: center;
+   gap: 20px; grid-gap: 20px;
+   // overflow: hidden;
+
+   justify-content: space-between;
+
+   div {
+      display: flex;
+      align-items: center;
+   }
+
+   hr {
+      display: none;
+   }
+
+   a {
+      color: $cyan;
+      text-decoration: none;
+      font-weight: 600;
+   }
+
+   button {
+      padding: 7.5px 0;
+      width: 125px;
+      font-family: inherit;
+      font-size: inherit;
+      color: $white;
+      background-color: $cyan;
+      outline: 0;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 20px;
+   }
+
+   p {
+      overflow: auto;
+      width: 100%;
+   }
+}
+
+#loader {
+   text-align: center;
+   display: none;
+   
+   img {
+      width: 50px;
+   }
+}
