@@ -85,7 +85,7 @@ body {
       top: -80px;
       width: 90%;
       margin: 0 auto;
-      padding: 50px 60px;
+      padding: 30px 60px 50px;
       border-radius: 10px;
 
       background: url('../images/bg-shorten-desktop.svg');
@@ -94,10 +94,21 @@ body {
       background-position: center;
       background-color: $darkViolet;
 
-      display: grid;
-      grid-template-columns: 1fr max-content;
-      gap: 2.5%;
-      grid-gap: 2.5%;
+      div {
+         display: grid;
+         grid-template-columns: 1fr max-content;
+         gap: 2.5%;
+         grid-gap: 2.5%;
+      }
+
+      #label {
+         padding-left: 18px;
+         color: red;
+         font-weight: 600;
+         margin-bottom: 15px;
+         height: 1rem;
+         font-size: 1rem;
+      }
 
       input[type='text']{
          font-size: inherit;
@@ -288,4 +299,70 @@ footer > div {
          margin-left: 20px;
       }
    }
+}
+
+#error {
+   color: red;
+   font-weight: bold;
+   
+   a {
+      color: $darkViolet;
+   }
+}
+
+.shortLinks {
+   display: flex;
+   width: 100%;
+   background-color: $white;
+   border-radius: 5px;
+   padding: 15px;
+   margin-bottom: 10px;
+   align-items: center;
+   gap: 20px; grid-gap: 20px;
+   // overflow: hidden;
+
+   justify-content: space-between;
+
+   div {
+      display: flex;
+      align-items: center;
+   }
+
+   hr {
+      display: none;
+   }
+
+   a {
+      color: $cyan;
+      text-decoration: none;
+      font-weight: 600;
+   }
+
+   button {
+      padding: 7.5px 0;
+      width: 125px;
+      font-family: inherit;
+      font-size: inherit;
+      color: $white;
+      background-color: $cyan;
+      outline: 0;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 20px;
+   }
+
+   p {
+      overflow: auto;
+      width: 100%;
+   }
+}
+
+#error {
+   width: 100%;
+   background-color: $white;
+   padding: 10px;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   display: none;
 }

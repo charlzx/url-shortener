@@ -51,12 +51,16 @@
   <section id="two">
     <div>
       <form id="form">
-        <input type="text" id="link-input" placeholder="Shorten a link here...">
-        <button type="submit">Shorten It!</button>
+        <p id="label"></p>
+        <div>
+          <input type="text" id="link-input" placeholder="Shorten a link here...">
+          <button type="submit">Shorten It!</button>
+        </div>
       </form>
   
       <div id="error"></div>
-      <div id="links"></div>
+      <div id="loader"></div>
+      <div id="short-links"></div>
   
       <div class="heading">
         <h1>Advanced Statistics</h1>
@@ -149,7 +153,8 @@
     </div>
   </footer>
 
-  <script src="js/nav.js"></script>
-  <script src="js/script.js"></script>
+  
+  <script src="js/nav.js" defer></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
