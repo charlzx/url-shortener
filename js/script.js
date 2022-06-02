@@ -49,7 +49,7 @@ form.addEventListener('submit', (e) => {
                
                <div>
                   <a href="https://${data.result.short_link}" target="_blank">${data.result.short_link}</a>
-                  <button>Copy</button>
+                  <button class="copy-link">Copy</button>
                </div>
             </div>
             `
@@ -83,12 +83,21 @@ form.addEventListener('submit', (e) => {
             setTimeout(function(){
                error.innerHTML = ""
                error.style.display = "none"
-            }, 3000)
+            }, 5000)
          }
 
       })
-      .catch(error => {
-         console.log(error)
+      .catch(err => {
+         console.log(err)
+
+         error.innerHTML = "Error: You're not connected to the Internet"
+         error.style.display = "block"
+
+         
+         setTimeout(function(){
+            error.innerHTML = ""
+            error.style.display = "none"
+         }, 5000)
       })
       
    } else {
@@ -98,8 +107,20 @@ form.addEventListener('submit', (e) => {
       setTimeout(function (){
          input.style.border = '3px solid transparent'
          label.innerHTML = ''
-      }, 3000)
+      }, 5000)
    }
 
    e.preventDefault();
+})
+
+document.body.addEventListener('click', (e) => {
+   console.log(e.target)
+
+   if(e.target.classList.contains("copy-link")){
+      console.log(e.target)
+
+      e.target.innerHTML = "Copied!"
+      e.target.style.backgroundColor = "hsl(257, 27%, 26%)"
+
+   }
 })

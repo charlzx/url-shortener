@@ -304,7 +304,17 @@ footer > div {
 #error {
    color: red;
    font-weight: bold;
-   
+   position: fixed;
+   z-index: 10;
+   top: 0vh;
+   margin-top: 30px;
+   background-color: lighten($gray, 50%);
+   width: 90%;
+   padding: 10px;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   display: none;
+   box-shadow: 0 8px 42px 5px lighten($gray, 20%);
    a {
       color: $darkViolet;
    }
@@ -356,13 +366,4 @@ footer > div {
       overflow: auto;
       width: 100%;
    }
-}
-
-#error {
-   width: 100%;
-   background-color: $white;
-   padding: 10px;
-   border-radius: 5px;
-   margin-bottom: 10px;
-   display: none;
 }
