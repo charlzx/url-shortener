@@ -51,6 +51,8 @@ form.addEventListener('submit', (e) => {
                </div>
             </div>
             `
+
+            storeLinks(data)
          }
 
          // display errors
@@ -85,7 +87,7 @@ form.addEventListener('submit', (e) => {
          }
 
       })
-         .catch(err => {
+      .catch(err => {
          loader.style.display = "none";
 
          console.log(err)
@@ -123,5 +125,50 @@ document.body.addEventListener('click', (e) => {
 
       e.target.innerHTML = "Copied!"
       e.target.style.backgroundColor = "hsl(257, 27%, 26%)"
+
+      setTimeout(() => {
+         e.target.innerHTML = "Copy"
+         e.target.style.backgroundColor = ""
+      }, 1500)
    }
+})
+
+function storeLinks (link){
+   let linksInLS; // tasks in session storage
+
+   if (sessionStorage.getItem('links') === null) {
+      linksInLS = []
+   } else {
+      linksInLS = JSON.parse(sessionStorage.getItem('links'))
+   }
+
+   linksInLS.push(link)
+
+   sessionStorage.setItem('links', JSON.stringify(linksInLS))
+}
+
+// display links in session storage
+document.addEventListener('DOMContentLoaded', () => {
+   let linksInLS; // tasks in session storage
+
+   if (sessionStorage.getItem('links') === null) {
+      linksInLS = [];
+   } else {
+      linksInLS = JSON.parse(sessionStorage.getItem('links'))
+   }
+
+   linksInLS.forEach(function(link){
+      shortLinks.innerHTML += `
+      <div class="shortLinks">
+         <p>${link.result.original_link}</p>
+         
+         <hr>
+         
+         <div>
+            <a href="https://${link.result.short_link}" target="_blank">${link.result.short_link}</a>
+            <button class="copy-link">Copy</button>
+         </div>
+      </div>
+      `
+   })
 })
